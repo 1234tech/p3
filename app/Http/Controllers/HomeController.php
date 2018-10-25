@@ -8,6 +8,7 @@ class HomeController extends Controller
 {
     public function __invoke()
     {
-        return 'This is the future homepage of project 3.';
+        return view('layouts.master');
+        //return 'This is the future homepage of project 3.';
     }
 }
