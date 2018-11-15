@@ -11,11 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Route::get('/', 'HomeController');
 
-Route::get('/results', 'ResultController@show');
+//results as to go before store to validate
+Route::get('/results', 'ResultController@results');  //if store is 'get', both get or post go to a blank page
+
+
+
+
 

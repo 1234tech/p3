@@ -6,9 +6,28 @@ use Illuminate\Http\Request;
 
 class ResultController extends Controller
 {
-    public function show($results = null)
+
+    public function results(Request $request)
     {
-        return view('foods.results');
-        //return 'These are the results based on your selection:' .$results;
-    }
-}
+
+        $request->validate([
+            'email' => 'required|email',
+            'feedback' => 'required|max:255',
+        ]);
+
+        $validEmail = $request->input('email');
+        $validFeedback = $request->input('feedback');
+        $validContact = $request->input('contact');
+
+
+        return view('foods.results')->with([
+            'email' => $validEmail,
+            'feedback' => $validFeedback,
+            'contact' => $validContact
+        ]);
+
+    }//end results function
+
+} // end class
+
+

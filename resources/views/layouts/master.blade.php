@@ -5,14 +5,14 @@
     <meta charset='utf-8'>
 
 
-    <link href='/css/projectthree.css' rel='stylesheet'>
+    <link href="{{asset('css/projectthree.css')}}" rel="stylesheet" />
 
-</head>
 <body>
 
+<h1>Feedback Request</h1>
 <section>
-    @yield('content')
-    @yield('results')
+    @yield('blankForm')
+    @yield('feedbackResults')
 </section>
 
 
